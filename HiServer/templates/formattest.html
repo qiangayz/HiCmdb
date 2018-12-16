@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    String.prototype.format = function (kwargs) {
+        var res = this.replace(/\{(\w+)\}/g, function (groups, group) {
+            return kwargs[group]
+        });
+        return res
+    };
+    var info = 'hello-{n}-{m}';
+    var dicts = {'n': 'word', 'm': '!'};
+    var ret = info.format(dicts);
+    console.log(ret)
+
+</script>
+</body>
+</html
